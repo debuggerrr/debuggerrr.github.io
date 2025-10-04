@@ -1,0 +1,47 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --accent:#06b6d4;
+  --text:#e6eef8;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,var(--bg),#071023);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:960px;margin:0 auto;padding:24px}
+.site-header{backdrop-filter:blur(6px);position:sticky;top:0;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.25));border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.site-title{margin:0;font-size:1.05rem}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:start}
+.lead{color:var(--muted);max-width:55ch}
+.card{background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.home-grid{display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start;padding:40px 0}
+.avatar{width:100%;height:auto;border-radius:10px;display:block;border:2px solid rgba(255,255,255,0.04)}
+.avatar.placeholder{width:100%;height:220px;border-radius:10px;background:linear-gradient(180deg,#082032,#053048);display:flex;align-items:center;justify-content:center;font-size:56px}
+.bio ul{margin:0;padding:0;list-style:none}
+.btn{display:inline-block;background:var(--accent);color:#052025;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);margin-left:8px}
+.about,.projects,.contact{padding:40px 0}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{background:var(--glass);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.muted{color:var(--muted);text-decoration:none}
+.site-footer{padding:24px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .project-grid{grid-template-columns:1fr}
+  .nav{display:none}
+}
