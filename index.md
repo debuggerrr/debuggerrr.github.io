@@ -6,7 +6,7 @@ title: "Home"
 <div class="home-grid">
   <div class="profile-card card">
     {% if site.static_files | where: "path", "/sid.png" %}
-      <img src="/sid.png" alt="Sid" class="avatar">
+      <img src="./sid.png" alt="Sid" class="avatar">
     {% else %}
       <div class="avatar placeholder">S</div>
     {% endif %}
