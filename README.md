@@ -11,9 +11,9 @@ Publish:
 2. In your GitHub repo settings -> Pages, set the source to the `main` branch (root) and save.
 3. Visit `https://debuggerrr.github.io` after a minute.
 
-Jekyll support:
-- This repo includes a minimal Jekyll scaffold (`_config.yml`, `_layouts/default.html`, `index.md`, and a sample post in `_posts/`). GitHub Pages will automatically build the site with Jekyll.
-- To show your avatar on the home page, place your photo at the repository root named `sid.png` (you already copied it). The template will include it automatically.
+Note about Jekyll:
+- I briefly added a Jekyll scaffold, but removed it to keep the repository as a simple static site. The static `index.html` is the current homepage, so GitHub Pages will serve it directly.
+- To show your avatar on the static homepage, keep your photo at the repository root named `sid.png` (you already copied it). The static `index.html` references `sid.png`.
 
 Customize:
 - Replace text in `index.html` (name, bio, projects).
