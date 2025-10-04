@@ -16,8 +16,9 @@
         <h1 class="site-title">Sid</h1>
         <nav class="nav">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="/resume.html">Resume</a>
           <a href="#contact">Contact</a>
+          <a href="https://sidk17.medium.com" target="_blank" rel="noopener">Medium</a>
         </nav>
       </div>
     </header>
@@ -27,7 +28,7 @@
         <div class="container hero-grid">
           <div>
             <h2>Hello — I’m Siddhesh (Sid)</h2>
-            <p class="lead">Senior Data Engineer passionate about crafting data pipelines, optimizing performance, and driving business decisions through data-driven strategies. I build reliable, scalable data and web applications. Familiar with Machine Learning and Gen AI.</p>
+            <p class="lead">Senior Data Engineer focused on building production data platforms and analytics solutions. Hands‑on experience building, training, and deploying machine learning models and integrating generative-AI capabilities (LLMs, embeddings) into production workflows.</p>
             <p>
               <a class="btn" href="https://www.linkedin.com/in/sid1992/" target="_blank" rel="noopener">View LinkedIn</a>
               <a class="btn ghost" href="/resume.html">Resume</a>
@@ -40,7 +41,7 @@
               <img src="sid.png" alt="Sid profile photo" class="avatar-small" onerror="this.style.display='none'" />
               <div>
                 <p><strong>Role:</strong> Software Engineer</p>
-                <p><strong>Focus:</strong> Data Analytics, Web apps, ML / Gen AI</p>
+                <p><strong>Focus:</strong> Data analytics, ML systems, generative-AI integration</p>
               </div>
             </div>
             <h4>Certifications</h4>
@@ -77,14 +78,7 @@
         <p>I build web applications and developer tools. I enjoy solving hard problems, improving developer experience, and shipping reliable, maintainable code.</p>
       </section>
 
-      <section id="projects" class="container projects">
-        <h3>Selected projects</h3>
-        <p class="collapsible"><button id="projects-toggle" class="collapse-toggle">Show projects</button> — I prefer a curated list. Click to toggle.</p>
-        <ul id="projects-list" class="project-list">
-          <li><strong>Project One</strong> — short one-line summary. <a href="#">Repo</a> · <a href="#">Demo</a></li>
-          <li><strong>Project Two</strong> — short one-line summary. <a href="#">Repo</a> · <a href="#">Demo</a></li>
-        </ul>
-      </section>
+      
 
       <section id="contact" class="container contact">
         <h3>Contact</h3>
@@ -97,19 +91,6 @@
         <p>Made by Sid — <a href="https://github.com/debuggerrr">GitHub</a></p>
       </div>
     </footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function(){
-        var btn = document.getElementById('projects-toggle');
-        var list = document.getElementById('projects-list');
-        if(btn && list){
-          btn.addEventListener('click', function(){
-            var hidden = list.style.display === 'none';
-            list.style.display = hidden ? 'block' : 'none';
-            btn.textContent = hidden ? 'Show projects' : 'Show projects';
-          });
-          list.style.display = 'none';
-        }
-      });
-    </script>
+    <!-- projects were removed; no extra scripts required -->
   </body>
 </html>
