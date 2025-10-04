@@ -35,6 +35,9 @@ body{
 .cert-icon{width:40px;height:40px;object-fit:contain}
 .project-list{list-style:none;padding:0;margin:0}
 .project-list li{background:var(--glass);padding:12px;border-radius:8px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.03)}
+.collapsible{background:transparent;border:1px dashed rgba(255,255,255,0.04);padding:10px;border-radius:8px}
+.collapse-toggle{display:inline-block;background:transparent;border:none;color:var(--accent);cursor:pointer}
+.resume .muted{margin-top:12px}
 .bio ul{margin:0;padding:0;list-style:none}
 .btn{display:inline-block;background:var(--accent);color:#052025;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
 .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);margin-left:8px}

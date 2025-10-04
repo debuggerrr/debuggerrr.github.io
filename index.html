@@ -30,13 +30,14 @@
             <p class="lead">Senior Data Engineer passionate about crafting data pipelines, optimizing performance, and driving business decisions through data-driven strategies. I build reliable, scalable data and web applications. Familiar with Machine Learning and Gen AI.</p>
             <p>
               <a class="btn" href="https://www.linkedin.com/in/sid1992/" target="_blank" rel="noopener">View LinkedIn</a>
+              <a class="btn ghost" href="/resume.html">Resume</a>
             </p>
             <p class="muted">Based in India · <a href="mailto:datawithsid@gmail.com">datawithsid@gmail.com</a></p>
           </div>
           <aside class="card bio profile-aside" aria-labelledby="profile-heading">
             <h3 id="profile-heading">Profile</h3>
             <div class="profile-top">
-              <img src="/sid.png" alt="Sid profile photo" class="avatar-small" onerror="this.style.display='none'" />
+              <img src="sid.png" alt="Sid profile photo" class="avatar-small" onerror="this.style.display='none'" />
               <div>
                 <p><strong>Role:</strong> Software Engineer</p>
                 <p><strong>Focus:</strong> Data Analytics, Web apps, ML / Gen AI</p>
@@ -46,7 +47,9 @@
             <ul class="cert-list">
               <li>
                 <!-- Prefer uploaded image named aws_data_analytics.png in repo root; fallback to inline SVG badge -->
-                <img src="/aws_data_analytics.png" alt="AWS Data Analytics Certification" class="cert-icon" onerror="this.style.display='none'" />
+                <a href="https://www.certmetrics.com/amazon/public/verification.aspx?" target="_blank" rel="noopener">
+                  <img src="/aws_data_analytics.png" alt="AWS Data Analytics Certification" class="cert-icon" onerror="this.style.display='none'" />
+                </a>
                 <svg class="cert-icon" role="img" aria-label="AWS Data Analytics Certification" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
                   <rect width="220" height="40" rx="6" fill="#FF9900" />
                   <text x="16" y="25" font-family="Inter, Arial, sans-serif" font-size="14" fill="#051017">AWS Data Analytics</text>
@@ -55,7 +58,9 @@
               </li>
               <li>
                 <!-- Prefer uploaded image named snowpro_core.png in repo root; fallback to inline SVG badge -->
-                <img src="/snowpro_core.png" alt="SnowPro Core Certification" class="cert-icon" onerror="this.style.display='none'" />
+                <a href="https://community.snowflake.com/s/" target="_blank" rel="noopener">
+                  <img src="/snowpro_core.png" alt="SnowPro Core Certification" class="cert-icon" onerror="this.style.display='none'" />
+                </a>
                 <svg class="cert-icon" role="img" aria-label="SnowPro Core Certification" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
                   <rect width="220" height="40" rx="6" fill="#2B7BB9" />
                   <text x="16" y="25" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ffffff">SnowPro Core</text>
@@ -74,8 +79,8 @@
 
       <section id="projects" class="container projects">
         <h3>Selected projects</h3>
-        <p>I prefer showing only a few highlights. If you'd like, I can add a curated list with links to repositories or demos. For now, replace the links below with the projects you want to show publicly.</p>
-        <ul class="project-list">
+        <p class="collapsible"><button id="projects-toggle" class="collapse-toggle">Show projects</button> — I prefer a curated list. Click to toggle.</p>
+        <ul id="projects-list" class="project-list">
           <li><strong>Project One</strong> — short one-line summary. <a href="#">Repo</a> · <a href="#">Demo</a></li>
           <li><strong>Project Two</strong> — short one-line summary. <a href="#">Repo</a> · <a href="#">Demo</a></li>
         </ul>
@@ -92,5 +97,19 @@
         <p>Made by Sid — <a href="https://github.com/debuggerrr">GitHub</a></p>
       </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var btn = document.getElementById('projects-toggle');
+        var list = document.getElementById('projects-list');
+        if(btn && list){
+          btn.addEventListener('click', function(){
+            var hidden = list.style.display === 'none';
+            list.style.display = hidden ? 'block' : 'none';
+            btn.textContent = hidden ? 'Show projects' : 'Show projects';
+          });
+          list.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
