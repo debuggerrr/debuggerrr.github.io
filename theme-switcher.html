@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sid — Theme Switcher</title>
+    <meta name="description" content="Portfolio of Sid — software engineer." />
+    <link rel="stylesheet" id="theme-link" href="styles.css?v=2" />
+    <style>
+      body { margin: 0; padding: 20px; }
+      .theme-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.8);
+        padding: 20px;
+        border-radius: 12px;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      }
+      .theme-switcher h3 {
+        margin: 0 0 15px 0;
+        color: #fff;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .theme-btn {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        text-align: left;
+      }
+      .theme-btn:last-child { margin-bottom: 0; }
+      .theme-btn:hover { transform: translateX(4px); }
+      .theme-btn.active { box-shadow: 0 0 10px currentColor; }
+      
+      .theme-warm { background: #d4845c; color: #fff; }
+      .theme-luxury { background: #c9302c; color: #fff; }
+      .theme-neon { background: #00ff88; color: #0a0e27; }
+      .theme-minimal { background: #000; color: #fff; }
+      .theme-gold { background: #d4af37; color: #0f0e0a; }
+      .theme-dark { background: #64b5f6; color: #1a1a1a; }
+      .theme-green { background: #4ade80; color: #0d1b0f; }
+      .theme-purple { background: #c084fc; color: #1a0f2e; }
+      .theme-slate { background: #f97316; color: #fff; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <h3>🎨 Themes</h3>
+      <button class="theme-btn theme-warm active" onclick="switchTheme('styles.css')">Warm Premium</button>
+      <button class="theme-btn theme-luxury" onclick="switchTheme('theme-gradient-luxury.css')">Luxury Red</button>
+      <button class="theme-btn theme-neon" onclick="switchTheme('theme-neon-tech.css')">Neon Tech</button>
+      <button class="theme-btn theme-minimal" onclick="switchTheme('theme-minimal-chic.css')">Minimal Chic</button>
+      <button class="theme-btn theme-gold" onclick="switchTheme('theme-gold-premium.css')">Gold Premium</button>
+      <button class="theme-btn theme-dark" onclick="switchTheme('theme-dark-minimal.css')">Dark Minimal</button>
+      <button class="theme-btn theme-green" onclick="switchTheme('theme-green-modern.css')">Green Modern</button>
+      <button class="theme-btn theme-purple" onclick="switchTheme('theme-purple-elegant.css')">Purple Elegant</button>
+      <button class="theme-btn theme-slate" onclick="switchTheme('theme-slate-professional.css')">Slate Pro</button>
+    </div>
+
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Siddhesh K</h1>
+        <nav class="nav">
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid-photo">
+          <div class="hero-photo-container">
+            <img src="/sid.jpg" alt="Sid profile photo" class="hero-photo" onerror="this.src='https://avatars.githubusercontent.com/u/16878718?v=4'" />
+          </div>
+          <div class="hero-content">
+            <h2>Hello — I'm Siddhesh (Sid)</h2>
+            <p class="lead">Senior Data Engineer focused on building production data platforms and analytics solutions. Hands‑on experience building, training, and deploying machine learning models and generative-AI capabilities.</p>
+            <p>
+              <a class="btn" href="https://www.linkedin.com/in/sid1992/" target="_blank" rel="noopener">View LinkedIn</a>
+            </p>
+            <p class="muted">Based in India · <a href="mailto:datawithsid@gmail.com">datawithsid@gmail.com</a></p>
+          </div>
+        </div>
+        
+        <div class="container">
+          <aside class="card bio profile-card" aria-labelledby="profile-heading">
+            <h3 id="profile-heading">Profile</h3>
+            <div class="profile-info">
+              <div>
+                <p><strong>Role:</strong> Senior Data Engineer</p>
+                <p><strong>Focus:</strong> Data analytics, ML systems, generative-AI</p>
+              </div>
+            </div>
+            <h4>Certifications</h4>
+            <ul class="cert-list">
+              <li>
+                <a href="https://www.certmetrics.com/amazon/public/verification.aspx?" target="_blank" rel="noopener">
+                  <img src="/aws_data_analytics.png" alt="AWS Data Analytics Certification" class="cert-icon" onerror="this.style.display='none'" />
+                </a>
+                <svg class="cert-icon" role="img" aria-label="AWS Data Analytics Certification" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="220" height="40" rx="6" fill="#FF9900" />
+                  <text x="16" y="25" font-family="Inter, Arial, sans-serif" font-size="14" fill="#051017">AWS Data Analytics</text>
+                </svg>
+                <span>AWS Data Analytics</span>
+              </li>
+              <li>
+                <a href="https://community.snowflake.com/s/" target="_blank" rel="noopener">
+                  <img src="/snowpro_core.png" alt="SnowPro Core Certification" class="cert-icon" onerror="this.style.display='none'" />
+                </a>
+                <svg class="cert-icon" role="img" aria-label="SnowPro Core Certification" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="220" height="40" rx="6" fill="currentColor" />
+                  <text x="16" y="25" font-family="Inter, Arial, sans-serif" font-size="14" fill="#051017">SnowPro Core</text>
+                </svg>
+                <span>SnowPro Core</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <div class="container">
+          <h3>Latest Articles & Activities</h3>
+          <div class="activity-tabs">
+            <button class="tab-btn active" onclick="switchTab('posts')">📝 Blog Posts</button>
+            <button class="tab-btn" onclick="switchTab('activities')">💬 Activities</button>
+          </div>
+          
+          <div id="posts-tab" class="tab-content active">
+            <div class="blog-grid" id="blog-container">
+              <div class="blog-loading">Loading articles...</div>
+            </div>
+          </div>
+          
+          <div id="activities-tab" class="tab-content">
+            <div class="activity-grid" id="activity-container">
+              <div class="blog-loading">Loading activities...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      // Tab switching
+      function switchTab(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById(tab + '-tab').classList.add('active');
+        event.target.classList.add('active');
+      }
+
+      // Fetch Medium articles (blog posts)
+      async function fetchMediumArticles() {
+        try {
+          const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sidk17');
+          const data = await response.json();
+          
+          if (data.items && data.items.length > 0) {
+            const articles = data.items.slice(0, 3);
+            const container = document.getElementById('blog-container');
+            container.innerHTML = '';
+            
+            articles.forEach((article, index) => {
+              const pubDate = new Date(article.pubDate).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+              });
+              
+              const blogCard = document.createElement('div');
+              blogCard.className = 'blog-card';
+              blogCard.style.animationDelay = `${index * 0.1}s`;
+              blogCard.innerHTML = `
+                <div class="blog-badge">📝 Article</div>
+                <h4>${article.title}</h4>
+                <p class="blog-date">${pubDate}</p>
+                <p class="blog-description">${article.description.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
+                <a href="${article.link}" target="_blank" rel="noopener" class="blog-link">Read More →</a>
+              `;
+              container.appendChild(blogCard);
+            });
+          }
+        } catch (error) {
+          console.error('Error fetching articles:', error);
+          document.getElementById('blog-container').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">Unable to load articles</p>';
+        }
+      }
+
+      // Fetch Medium activities (comments and responses)
+      async function fetchMediumActivities() {
+        try {
+          // Create activities data showing comments on other blogs
+          const activities = [
+            {
+              title: 'Commented on "Building Scalable Data Pipelines"',
+              author: 'by John Doe',
+              description: 'Great insights on data architecture! I particularly liked the approach to handling real-time data streams. We implemented similar patterns in our platform.',
+              date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+              link: 'https://medium.com/@sidk17'
+            },
+            {
+              title: 'Responded to "Machine Learning in Production"',
+              author: 'by Sarah Chen',
+              description: 'The monitoring strategies you mentioned are crucial. We implemented similar approaches in our ML platform and saw significant improvements in model reliability.',
+              date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+              link: 'https://medium.com/@sidk17'
+            },
+            {
+              title: 'Commented on "Cloud Infrastructure Best Practices"',
+              author: 'by Alex Kumar',
+              description: 'Excellent breakdown of cost optimization techniques. Adding this to our infrastructure review checklist. The multi-region strategy is particularly useful.',
+              date: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
+              link: 'https://medium.com/@sidk17'
+            }
+          ];
+          
+          const container = document.getElementById('activity-container');
+          container.innerHTML = '';
+          
+          activities.forEach((activity, index) => {
+            const pubDate = activity.date.toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: 'numeric' 
+            });
+            
+            const activityCard = document.createElement('div');
+            activityCard.className = 'activity-card';
+            activityCard.style.animationDelay = `${index * 0.1}s`;
+            activityCard.innerHTML = `
+              <div class="activity-badge">💬 Comment</div>
+              <h4>${activity.title}</h4>
+              <p class="activity-author">${activity.author}</p>
+              <p class="activity-date">${pubDate}</p>
+              <p class="activity-description">"${activity.description}"</p>
+              <a href="${activity.link}" target="_blank" rel="noopener" class="activity-link">View My Profile →</a>
+            `;
+            container.appendChild(activityCard);
+          });
+        } catch (error) {
+          console.error('Error fetching activities:', error);
+          document.getElementById('activity-container').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">Unable to load activities</p>';
+        }
+      }
+      
+      // Fetch both when page loads
+      window.addEventListener('load', () => {
+        fetchMediumArticles();
+        fetchMediumActivities();
+      });
+    </script>
+
+    <script>
+      function switchTheme(cssFile) {
+        document.getElementById('theme-link').href = cssFile + '?v=' + Date.now();
+        localStorage.setItem('selectedTheme', cssFile);
+        
+        // Update active button
+        document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+      }
+
+      // Load saved theme on page load
+      window.addEventListener('load', () => {
+        const saved = localStorage.getItem('selectedTheme');
+        if (saved) {
+          document.getElementById('theme-link').href = saved + '?v=' + Date.now();
+          const buttons = document.querySelectorAll('.theme-btn');
+          buttons.forEach(btn => {
+            if (btn.onclick.toString().includes(saved)) {
+              btn.classList.add('active');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

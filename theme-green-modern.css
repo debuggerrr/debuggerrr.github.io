@@ -1,30 +1,28 @@
 :root{
-  --bg: #faf8f3;
-  --card: #ffffff;
-  --muted: #8b8680;
-  --accent: #d4845c;
-  --text: #2c2420;
-  --glass: rgba(212,132,92,0.04);
-  --border: #e8e3db;
+  --bg: #0d1b0f;
+  --card: #1a2e1f;
+  --muted: #8fb89f;
+  --accent: #4ade80;
+  --text: #f0fdf4;
+  --glass: rgba(74,222,128,0.05);
+  --border: #2d4a35;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;font-family:'Segoe UI', Trebuchet MS, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--bg);min-height:100vh}
 .site-container{background:var(--bg);min-height:100vh}
 .container{max-width:1100px;margin:0 auto;padding:40px 28px}
-.site-header{position:sticky;top:0;background:rgba(250,248,243,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:100}
+.site-header{position:sticky;top:0;background:rgba(13,27,15,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:100}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:20px 28px}
 .site-title{margin:0;font-size:1.2rem;font-weight:700;letter-spacing:-0.5px;color:var(--text)}
 .nav{display:flex;gap:32px}
-.nav a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:color 0.3s ease;position:relative}
+.nav a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:color 0.3s ease}
 .nav a:hover{color:var(--accent)}
-.nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width 0.3s ease}
-.nav a:hover::after{width:100%}
 .hero{padding:80px 0 60px}
 .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start}
 .hero h2{font-size:2.8rem;line-height:1.2;margin:0 0 24px 0;font-weight:700;letter-spacing:-1px}
 .lead{color:var(--muted);max-width:65ch;line-height:1.7;font-size:1.05rem;margin:0 0 32px 0}
-.card{background:var(--card);padding:32px;border-radius:16px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(44,36,32,0.04)}
+.card{background:var(--card);padding:32px;border-radius:16px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(74,222,128,0.1)}
 .card h3{margin:0 0 24px 0;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text)}
 .card h4{margin:20px 0 12px 0;font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)}
 .profile-top{display:flex;align-items:center;gap:16px;margin-bottom:24px}
@@ -33,17 +31,17 @@ body{margin:0;font-family:'Segoe UI', Trebuchet MS, sans-serif;color:var(--text)
 .cert-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
 .cert-list li{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--muted)}
 .cert-icon{width:36px;height:36px;object-fit:contain;flex-shrink:0}
-.avatar-small{width:100px;height:100px;border-radius:12px;object-fit:cover;border:2px solid var(--border);box-shadow:0 4px 12px rgba(44,36,32,0.08)}
-.btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.3s ease;border:none;cursor:pointer}
-.btn:hover{background:#c26d47;transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,132,92,0.25)}
+.avatar-small{width:100px;height:100px;border-radius:12px;object-fit:cover;border:2px solid var(--border);box-shadow:0 4px 12px rgba(74,222,128,0.15)}
+.btn{display:inline-block;background:var(--accent);color:#0d1b0f;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.3s ease;border:none;cursor:pointer}
+.btn:hover{background:#22c55e;transform:translateY(-2px);box-shadow:0 8px 20px rgba(74,222,128,0.3)}
 .btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:12px 26px}
-.btn.ghost:hover{background:var(--accent);color:#fff}
+.btn.ghost:hover{background:var(--accent);color:#0d1b0f}
 .about,.projects,.contact{padding:60px 0}
 .about h3,.projects h3,.contact h3{font-size:1.8rem;margin:0 0 24px 0;font-weight:700;letter-spacing:-0.5px}
 .about p,.contact p{color:var(--muted);line-height:1.8;font-size:1rem;max-width:70ch}
 .muted{color:var(--muted);text-decoration:none}
 .muted a{color:var(--accent);text-decoration:none;transition:color 0.3s ease}
-.muted a:hover{color:#c26d47}
+.muted a:hover{color:#22c55e}
 .site-footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:0.9rem}
 
 @media (max-width:880px){
