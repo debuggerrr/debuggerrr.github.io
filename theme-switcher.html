@@ -8,68 +8,12 @@
     <link rel="stylesheet" id="theme-link" href="styles.css?v=2" />
     <style>
       body { margin: 0; padding: 20px; }
-      .theme-switcher {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(0,0,0,0.8);
-        padding: 20px;
-        border-radius: 12px;
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-      }
-      .theme-switcher h3 {
-        margin: 0 0 15px 0;
-        color: #fff;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .theme-btn {
-        display: block;
-        width: 100%;
-        padding: 10px 15px;
-        margin-bottom: 8px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 0.85rem;
-        transition: all 0.3s ease;
-        text-align: left;
-      }
-      .theme-btn:last-child { margin-bottom: 0; }
-      .theme-btn:hover { transform: translateX(4px); }
-      .theme-btn.active { box-shadow: 0 0 10px currentColor; }
-      
-      .theme-warm { background: #d4845c; color: #fff; }
-      .theme-luxury { background: #c9302c; color: #fff; }
-      .theme-neon { background: #00ff88; color: #0a0e27; }
-      .theme-minimal { background: #000; color: #fff; }
-      .theme-gold { background: #d4af37; color: #0f0e0a; }
-      .theme-dark { background: #64b5f6; color: #1a1a1a; }
-      .theme-green { background: #4ade80; color: #0d1b0f; }
-      .theme-purple { background: #c084fc; color: #1a0f2e; }
-      .theme-slate { background: #f97316; color: #fff; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="theme-switcher">
-      <h3>🎨 Themes</h3>
-      <button class="theme-btn theme-warm active" onclick="switchTheme('styles.css')">Warm Premium</button>
-      <button class="theme-btn theme-luxury" onclick="switchTheme('theme-gradient-luxury.css')">Luxury Red</button>
-      <button class="theme-btn theme-neon" onclick="switchTheme('theme-neon-tech.css')">Neon Tech</button>
-      <button class="theme-btn theme-minimal" onclick="switchTheme('theme-minimal-chic.css')">Minimal Chic</button>
-      <button class="theme-btn theme-gold" onclick="switchTheme('theme-gold-premium.css')">Gold Premium</button>
-      <button class="theme-btn theme-dark" onclick="switchTheme('theme-dark-minimal.css')">Dark Minimal</button>
-      <button class="theme-btn theme-green" onclick="switchTheme('theme-green-modern.css')">Green Modern</button>
-      <button class="theme-btn theme-purple" onclick="switchTheme('theme-purple-elegant.css')">Purple Elegant</button>
-      <button class="theme-btn theme-slate" onclick="switchTheme('theme-slate-professional.css')">Slate Pro</button>
-    </div>
-
     <header class="site-header">
       <div class="container">
         <h1 class="site-title">Siddhesh K</h1>
@@ -86,9 +30,10 @@
           </div>
           <div class="hero-content">
             <h2>Hello — I'm Siddhesh (Sid)</h2>
-            <p class="lead">Senior Data Engineer focused on building production data platforms and analytics solutions. Hands‑on experience building, training, and deploying machine learning models and generative-AI capabilities.</p>
+            <p class="lead">Senior Data Engineer / Lead / Architect (AWS, Snowflake) with 9+ years of hands-on experience building data platforms that power retail and logistics innovation. Started as an engineer, evolved into a technical leader architecting solutions for complex, data-intensive challenges. Passionate about designing systems that scale, mentoring teams, and building ML-driven features and deploying generative-AI capabilities at scale. Specialized in transforming raw data into actionable insights that drive business growth.</p>
             <p>
               <a class="btn" href="https://www.linkedin.com/in/sid1992/" target="_blank" rel="noopener">View LinkedIn</a>
+              <a class="btn btn-medium" href="https://medium.com/@sidk17" target="_blank" rel="noopener">Read on Medium</a>
             </p>
             <p class="muted">Based in India · <a href="mailto:datawithsid@gmail.com">datawithsid@gmail.com</a></p>
           </div>
@@ -99,8 +44,10 @@
             <h3 id="profile-heading">Profile</h3>
             <div class="profile-info">
               <div>
-                <p><strong>Role:</strong> Senior Data Engineer</p>
-                <p><strong>Focus:</strong> Data analytics, ML systems, generative-AI</p>
+                <p><strong>Role:</strong> Senior Data Engineer / Lead / Architect (AWS, Snowflake)</p>
+                <p><strong>Experience:</strong> 9+ Years</p>
+                <p><strong>Domains:</strong> Retail, Logistics, E-commerce</p>
+                <p><strong>Focus:</strong> Data platforms, ML systems, generative-AI, Analytics</p>
               </div>
             </div>
             <h4>Certifications</h4>
@@ -132,37 +79,27 @@
 
       <section class="blog-section">
         <div class="container">
-          <h3>Latest Articles & Activities</h3>
-          <div class="activity-tabs">
-            <button class="tab-btn active" onclick="switchTab('posts')">📝 Blog Posts</button>
-            <button class="tab-btn" onclick="switchTab('activities')">💬 Activities</button>
-          </div>
-          
-          <div id="posts-tab" class="tab-content active">
-            <div class="blog-grid" id="blog-container">
-              <div class="blog-loading">Loading articles...</div>
-            </div>
-          </div>
-          
-          <div id="activities-tab" class="tab-content">
-            <div class="activity-grid" id="activity-container">
-              <div class="blog-loading">Loading activities...</div>
-            </div>
+          <h3>Latest Articles</h3>
+          <div class="blog-grid" id="blog-container">
+            <div class="blog-loading">Loading articles...</div>
           </div>
         </div>
       </section>
 
     </main>
 
-    <script>
-      // Tab switching
-      function switchTab(tab) {
-        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-        document.getElementById(tab + '-tab').classList.add('active');
-        event.target.classList.add('active');
-      }
+    <div class="page-counter">
+      <div class="counter-content">
+        <span class="counter-label">Unique Visitors</span>
+        <div class="counter-display">
+          <span class="counter-number" id="counter">0</span>
+          <span class="counter-icon">👥</span>
+        </div>
+        <button class="counter-reset" onclick="resetCounter()" title="Reset counter">↻</button>
+      </div>
+    </div>
 
+    <script>
       // Fetch Medium articles (blog posts)
       async function fetchMediumArticles() {
         try {
@@ -200,68 +137,89 @@
         }
       }
 
-      // Fetch Medium activities (comments and responses)
-      async function fetchMediumActivities() {
+      
+      // Fetch articles when page loads
+      window.addEventListener('load', fetchMediumArticles);
+
+      // Page counter functionality - tracks unique visitors
+      async function initializeCounter() {
         try {
-          // Create activities data showing comments on other blogs
-          const activities = [
-            {
-              title: 'Commented on "Building Scalable Data Pipelines"',
-              author: 'by John Doe',
-              description: 'Great insights on data architecture! I particularly liked the approach to handling real-time data streams. We implemented similar patterns in our platform.',
-              date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-              link: 'https://medium.com/@sidk17'
-            },
-            {
-              title: 'Responded to "Machine Learning in Production"',
-              author: 'by Sarah Chen',
-              description: 'The monitoring strategies you mentioned are crucial. We implemented similar approaches in our ML platform and saw significant improvements in model reliability.',
-              date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-              link: 'https://medium.com/@sidk17'
-            },
-            {
-              title: 'Commented on "Cloud Infrastructure Best Practices"',
-              author: 'by Alex Kumar',
-              description: 'Excellent breakdown of cost optimization techniques. Adding this to our infrastructure review checklist. The multi-region strategy is particularly useful.',
-              date: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
-              link: 'https://medium.com/@sidk17'
-            }
-          ];
+          // Generate or retrieve unique visitor ID (persists across sessions)
+          let visitorId = localStorage.getItem('visitorId');
+          let isNewVisitor = false;
           
-          const container = document.getElementById('activity-container');
-          container.innerHTML = '';
+          if (!visitorId) {
+            visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('visitorId', visitorId);
+            isNewVisitor = true;
+          }
           
-          activities.forEach((activity, index) => {
-            const pubDate = activity.date.toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'short', 
-              day: 'numeric' 
-            });
+          // Only increment if this is a new visitor (first time ever)
+          if (isNewVisitor) {
+            // First visit ever - increment unique visitor count
+            const response = await fetch('https://api.countapi.xyz/hit/sidk17-portfolio/unique-visitors');
+            const data = await response.json();
             
-            const activityCard = document.createElement('div');
-            activityCard.className = 'activity-card';
-            activityCard.style.animationDelay = `${index * 0.1}s`;
-            activityCard.innerHTML = `
-              <div class="activity-badge">💬 Comment</div>
-              <h4>${activity.title}</h4>
-              <p class="activity-author">${activity.author}</p>
-              <p class="activity-date">${pubDate}</p>
-              <p class="activity-description">"${activity.description}"</p>
-              <a href="${activity.link}" target="_blank" rel="noopener" class="activity-link">View My Profile →</a>
-            `;
-            container.appendChild(activityCard);
-          });
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = data.value;
+            counterElement.classList.add('counter-animate');
+            
+            setTimeout(() => {
+              counterElement.classList.remove('counter-animate');
+            }, 600);
+          } else {
+            // Returning visitor - just display current count without incrementing
+            const response = await fetch('https://api.countapi.xyz/get/sidk17-portfolio/unique-visitors');
+            const data = await response.json();
+            
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = data.value;
+          }
         } catch (error) {
-          console.error('Error fetching activities:', error);
-          document.getElementById('activity-container').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">Unable to load activities</p>';
+          console.error('Error fetching counter:', error);
+          // Fallback to localStorage if API fails
+          let isNewVisitor = !localStorage.getItem('localVisitorId');
+          
+          if (isNewVisitor) {
+            localStorage.setItem('localVisitorId', 'true');
+            let uniqueVisitors = localStorage.getItem('uniqueVisitors') || '0';
+            uniqueVisitors = parseInt(uniqueVisitors) + 1;
+            localStorage.setItem('uniqueVisitors', uniqueVisitors);
+          }
+          
+          const counterElement = document.getElementById('counter');
+          const count = localStorage.getItem('uniqueVisitors') || '0';
+          counterElement.textContent = count;
+          
+          if (isNewVisitor) {
+            counterElement.classList.add('counter-animate');
+            setTimeout(() => {
+              counterElement.classList.remove('counter-animate');
+            }, 600);
+          }
         }
       }
-      
-      // Fetch both when page loads
-      window.addEventListener('load', () => {
-        fetchMediumArticles();
-        fetchMediumActivities();
-      });
+
+      // Reset counter function
+      function resetCounter() {
+        if (confirm('Are you sure you want to reset the counter? This will clear your visitor ID.')) {
+          // Clear all local storage related to counter
+          localStorage.clear();
+          
+          // Update display
+          document.getElementById('counter').textContent = '0';
+          
+          alert('Counter reset! Your visitor ID has been cleared. Refresh the page to start fresh.');
+          
+          // Reload page after a short delay
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
+        }
+      }
+
+      // Initialize counter on page load
+      window.addEventListener('load', initializeCounter);
     </script>
 
     <script>
