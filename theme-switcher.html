@@ -88,17 +88,6 @@
 
     </main>
 
-    <div class="page-counter">
-      <div class="counter-content">
-        <span class="counter-label">Unique Visitors</span>
-        <div class="counter-display">
-          <span class="counter-number" id="counter">0</span>
-          <span class="counter-icon">👥</span>
-        </div>
-        <button class="counter-reset" onclick="resetCounter()" title="Reset counter">↻</button>
-      </div>
-    </div>
-
     <script>
       // Fetch Medium articles (blog posts)
       async function fetchMediumArticles() {
@@ -137,89 +126,8 @@
         }
       }
 
-      
       // Fetch articles when page loads
       window.addEventListener('load', fetchMediumArticles);
-
-      // Page counter functionality - tracks unique visitors
-      async function initializeCounter() {
-        try {
-          // Generate or retrieve unique visitor ID (persists across sessions)
-          let visitorId = localStorage.getItem('visitorId');
-          let isNewVisitor = false;
-          
-          if (!visitorId) {
-            visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('visitorId', visitorId);
-            isNewVisitor = true;
-          }
-          
-          // Only increment if this is a new visitor (first time ever)
-          if (isNewVisitor) {
-            // First visit ever - increment unique visitor count
-            const response = await fetch('https://api.countapi.xyz/hit/sidk17-portfolio/unique-visitors');
-            const data = await response.json();
-            
-            const counterElement = document.getElementById('counter');
-            counterElement.textContent = data.value;
-            counterElement.classList.add('counter-animate');
-            
-            setTimeout(() => {
-              counterElement.classList.remove('counter-animate');
-            }, 600);
-          } else {
-            // Returning visitor - just display current count without incrementing
-            const response = await fetch('https://api.countapi.xyz/get/sidk17-portfolio/unique-visitors');
-            const data = await response.json();
-            
-            const counterElement = document.getElementById('counter');
-            counterElement.textContent = data.value;
-          }
-        } catch (error) {
-          console.error('Error fetching counter:', error);
-          // Fallback to localStorage if API fails
-          let isNewVisitor = !localStorage.getItem('localVisitorId');
-          
-          if (isNewVisitor) {
-            localStorage.setItem('localVisitorId', 'true');
-            let uniqueVisitors = localStorage.getItem('uniqueVisitors') || '0';
-            uniqueVisitors = parseInt(uniqueVisitors) + 1;
-            localStorage.setItem('uniqueVisitors', uniqueVisitors);
-          }
-          
-          const counterElement = document.getElementById('counter');
-          const count = localStorage.getItem('uniqueVisitors') || '0';
-          counterElement.textContent = count;
-          
-          if (isNewVisitor) {
-            counterElement.classList.add('counter-animate');
-            setTimeout(() => {
-              counterElement.classList.remove('counter-animate');
-            }, 600);
-          }
-        }
-      }
-
-      // Reset counter function
-      function resetCounter() {
-        if (confirm('Are you sure you want to reset the counter? This will clear your visitor ID.')) {
-          // Clear all local storage related to counter
-          localStorage.clear();
-          
-          // Update display
-          document.getElementById('counter').textContent = '0';
-          
-          alert('Counter reset! Your visitor ID has been cleared. Refresh the page to start fresh.');
-          
-          // Reload page after a short delay
-          setTimeout(() => {
-            location.reload();
-          }, 1000);
-        }
-      }
-
-      // Initialize counter on page load
-      window.addEventListener('load', initializeCounter);
     </script>
 
     <script>
