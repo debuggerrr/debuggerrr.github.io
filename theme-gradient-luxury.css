@@ -70,6 +70,7 @@ body{margin:0;font-family:'Segoe UI', Trebuchet MS, sans-serif;color:var(--text)
 .blog-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
 .blog-card:hover::before{opacity:1}
 .blog-badge{display:inline-block;background:rgba(201,48,44,0.1);color:var(--accent);padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+.badge-icon{margin-right:4px;font-size:1em;display:inline-block}
 .blog-card h4{margin:0 0 12px 0;font-size:1.1rem;font-weight:800;color:var(--text);line-height:1.4}
 .blog-date{margin:0 0 12px 0;font-size:0.85rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
 .blog-description{margin:0 0 16px 0;font-size:0.95rem;color:#3d3530;line-height:1.6;font-weight:500}

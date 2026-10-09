@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Sid — Theme Switcher</title>
     <meta name="description" content="Portfolio of Sid — software engineer." />
-    <link rel="stylesheet" id="theme-link" href="styles.css?v=2" />
+    <link rel="stylesheet" id="theme-link" href="styles.css?v=3" />
     <style>
       body { margin: 0; padding: 20px; }
     </style>
@@ -21,7 +21,7 @@
         </nav>
       </div>
     </header>
-
+    
     <main>
       <section class="hero">
         <div class="container hero-grid-photo">
@@ -91,13 +91,19 @@
     <script>
       // Fetch Medium articles (blog posts)
       async function fetchMediumArticles() {
+        const container = document.getElementById('blog-container');
+        
         try {
-          const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sidk17');
+          const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sidk17', {
+            timeout: 8000
+          });
+          
+          if (!response.ok) throw new Error('API error');
+          
           const data = await response.json();
           
           if (data.items && data.items.length > 0) {
             const articles = data.items.slice(0, 3);
-            const container = document.getElementById('blog-container');
             container.innerHTML = '';
             
             articles.forEach((article, index) => {
@@ -107,27 +113,49 @@
                 day: 'numeric' 
               });
               
+              // Sanitize and extract text from description
+              const plainText = article.description 
+                ? article.description.replace(/<[^>]*>/g, '').substring(0, 120) 
+                : 'Read this article on Medium';
+              
               const blogCard = document.createElement('div');
               blogCard.className = 'blog-card';
               blogCard.style.animationDelay = `${index * 0.1}s`;
+              
+              const link = article.link || 'https://medium.com/@sidk17';
+              
               blogCard.innerHTML = `
-                <div class="blog-badge">📝 Article</div>
-                <h4>${article.title}</h4>
+                <div class="blog-badge"><span class="badge-icon">�</span> Article</div>
+                <h4>${article.title || 'Untitled'}</h4>
                 <p class="blog-date">${pubDate}</p>
-                <p class="blog-description">${article.description.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
-                <a href="${article.link}" target="_blank" rel="noopener" class="blog-link">Read More →</a>
+                <p class="blog-description">${plainText}...</p>
+                <a href="${link}" target="_blank" rel="noopener noreferrer" class="blog-link">Read More →</a>
               `;
               container.appendChild(blogCard);
             });
+          } else {
+            throw new Error('No articles found');
           }
         } catch (error) {
           console.error('Error fetching articles:', error);
-          document.getElementById('blog-container').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">Unable to load articles</p>';
+          // Fallback content
+          container.innerHTML = `
+            <div class="blog-card" style="grid-column: 1/-1;">
+              <div class="blog-badge"><span class="badge-icon">�</span> Articles</div>
+              <h4>Latest Articles on Medium</h4>
+              <p class="blog-description">Check out my latest writing on data engineering, ML systems, and cloud architecture.</p>
+              <a href="https://medium.com/@sidk17" target="_blank" rel="noopener noreferrer" class="blog-link">Visit My Medium Profile →</a>
+            </div>
+          `;
         }
       }
 
       // Fetch articles when page loads
-      window.addEventListener('load', fetchMediumArticles);
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fetchMediumArticles);
+      } else {
+        fetchMediumArticles();
+      }
     </script>
 
     <script>
